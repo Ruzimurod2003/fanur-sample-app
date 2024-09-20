@@ -9,8 +9,6 @@
     <meta name="description" content="Official website of Fanur Group" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSS
-    ============================================ -->
     <link rel="stylesheet" href="~/lib/main_template/assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="~/lib/main_template/assets/css/vendor/slick.css">
     <link rel="stylesheet" href="~/lib/main_template/assets/css/vendor/slick-theme.css">
@@ -53,7 +51,7 @@
                                                     class="fab fa-telegram"></i>Telegram</a>
                                         </li>
                                         <li>
-                                            <a href="#"><i
+                                            <a href="tel:@ConfigurationConstant.TelephoneNumber"><i
                                                     class="feather-phone"></i>@ConfigurationConstant.TelephoneNumber</a>
                                         </li>
                                         <li>
@@ -63,18 +61,6 @@
                                     </ul>
                                 </div>
                                 <!-- End Header Information List  -->
-                            </div>
-                        </div>
-                        <div class="rbt-header-sec-col rbt-header-center">
-                            <div class="rbt-header-content justify-content-start justify-content-xl-center">
-                                <div class="header-info">
-                                    <div class="rbt-header-top-news">
-                                        <div class="inner">
-                                            <div class="content">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="rbt-header-sec-col rbt-header-right mt_md--10 mt_sm--10">
@@ -167,18 +153,27 @@
                                 </li>
 
                                 <li class="with-megamenu has-menu-child-item">
-                                    <a href="#">@Localizer["projects"]<i class="feather-chevron-down"></i></a>
+                                    <a asp-action="FirstProject" asp-controller="Home">@Localizer["projects"]<i
+                                            class="feather-chevron-down"></i></a>
                                     <!-- Start Mega Menu  -->
                                     <div class="rbt-megamenu grid-item-2">
                                         <div class="wrapper">
                                             <div class="row row--15">
-                                                <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item" style="width: 100%;">
                                                     <h3 class="rbt-short-title">@Localizer["projects"]</h3>
                                                     <ul class="mega-menu-item">
-                                                        <li><a asp-action="FirstProject" asp-controller="Home">@Localizer["projects_first"]</a></li>
-                                                        <li><a asp-action="SecondProject" asp-controller="Home">@Localizer["projects_second"]</a></li>
-                                                        <li><a asp-action="ThirdProject" asp-controller="Home">@Localizer["projects_third"]</a></li>
-                                                        <li><a asp-action="FourthProject" asp-controller="Home">@Localizer["projects_fourth"]</a></li>
+                                                        <li><a asp-action="FirstProject"
+                                                                asp-controller="Home">@Localizer["projects_first"]</a>
+                                                        </li>
+                                                        <li><a asp-action="SecondProject"
+                                                                asp-controller="Home">@Localizer["projects_second"]</a>
+                                                        </li>
+                                                        <li><a asp-action="ThirdProject"
+                                                                asp-controller="Home">@Localizer["projects_third"]</a>
+                                                        </li>
+                                                        <li><a asp-action="FourthProject"
+                                                                asp-controller="Home">@Localizer["projects_fourth"]</a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -265,7 +260,7 @@
                                 class="feather-mail"></i>@ConfigurationConstant.EmailAddres</a>
                     </li>
                     <li>
-                        <a href="#"><i class="feather-phone"></i>@ConfigurationConstant.TelephoneNumber</a>
+                        <a href="tel:@ConfigurationConstant.TelephoneNumber"><i class="feather-phone"></i>@ConfigurationConstant.TelephoneNumber</a>
                     </li>
                     <li>
                         <a href="@ConfigurationConstant.InstagramLink"><i class="fab fa-instagram"></i>Instagram</a>
@@ -291,10 +286,14 @@
                                     <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
                                         <h3 class="rbt-short-title">@Localizer["project"]</h3>
                                         <ul class="mega-menu-item">
-                                            <li><a asp-action="FirstProject" asp-controller="Home">@Localizer["projects_first"]</a></li>
-                                            <li><a asp-action="SecondProject" asp-controller="Home">@Localizer["projects_second"]</a></li>
-                                            <li><a asp-action="ThirdProject" asp-controller="Home">@Localizer["projects_third"]</a></li>
-                                            <li><a asp-action="FourthProject" asp-controller="Home">@Localizer["projects_fourth"]</a></li>
+                                            <li><a asp-action="FirstProject"
+                                                    asp-controller="Home">@Localizer["projects_first"]</a></li>
+                                            <li><a asp-action="SecondProject"
+                                                    asp-controller="Home">@Localizer["projects_second"]</a></li>
+                                            <li><a asp-action="ThirdProject"
+                                                    asp-controller="Home">@Localizer["projects_third"]</a></li>
+                                            <li><a asp-action="FourthProject"
+                                                    asp-controller="Home">@Localizer["projects_fourth"]</a></li>
                                         </ul>
                                     </div>
                                 </div>

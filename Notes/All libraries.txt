@@ -1,0 +1,45 @@
+### Foydalanilgan CSS Fayllari:
+
+1. `~/lib/main_template/assets/css/vendor/bootstrap.min.css`
+2. `~/lib/main_template/assets/css/vendor/slick.css`
+3. `~/lib/main_template/assets/css/vendor/slick-theme.css`
+4. `~/lib/main_template/assets/css/plugins/sal.css`
+5. `~/lib/main_template/assets/css/plugins/feather.css`
+6. `~/lib/main_template/assets/css/plugins/fontawesome.min.css`
+7. `~/lib/main_template/assets/css/plugins/euclid-circulara.css`
+8. `~/lib/main_template/assets/css/plugins/swiper.css`
+9. `~/lib/main_template/assets/css/plugins/magnify.css`
+10. `~/lib/main_template/assets/css/plugins/odometer.css`
+11. `~/lib/main_template/assets/css/plugins/animation.css`
+12. `~/lib/main_template/assets/css/plugins/bootstrap-select.min.css`
+13. `~/lib/main_template/assets/css/plugins/jquery-ui.css`
+14. `~/lib/main_template/assets/css/plugins/magnigy-popup.min.css`
+15. `~/lib/main_template/assets/css/plugins/plyr.css`
+16. `~/lib/main_template/assets/css/style.css`
+
+### Foydalanilgan JavaScript Fayllari:
+
+1. `~/lib/main_template/assets/js/vendor/modernizr.min.js`
+2. `~/lib/main_template/assets/js/vendor/jquery.js`
+3. `~/lib/main_template/assets/js/vendor/bootstrap.min.js`
+4. `~/lib/main_template/assets/js/vendor/sal.js`
+5. `~/lib/main_template/assets/js/vendor/swiper.js`
+6. `~/lib/main_template/assets/js/vendor/magnify.min.js`
+7. `~/lib/main_template/assets/js/vendor/jquery-appear.js`
+8. `~/lib/main_template/assets/js/vendor/odometer.js`
+9. `~/lib/main_template/assets/js/vendor/backtotop.js`
+10. `~/lib/main_template/assets/js/vendor/isotop.js`
+11. `~/lib/main_template/assets/js/vendor/imageloaded.js`
+12. `~/lib/main_template/assets/js/vendor/wow.js`
+13. `~/lib/main_template/assets/js/vendor/waypoint.min.js`
+14. `~/lib/main_template/assets/js/vendor/easypie.js`
+15. `~/lib/main_template/assets/js/vendor/text-type.js`
+16. `~/lib/main_template/assets/js/vendor/jquery-one-page-nav.js`
+17. `~/lib/main_template/assets/js/vendor/bootstrap-select.min.js`
+18. `~/lib/main_template/assets/js/vendor/jquery-ui.js`
+19. `~/lib/main_template/assets/js/vendor/magnify-popup.min.js`
+20. `~/lib/main_template/assets/js/vendor/paralax-scroll.js`
+21. `~/lib/main_template/assets/js/vendor/paralax.min.js`
+22. `~/lib/main_template/assets/js/vendor/countdown.js`
+23. `~/lib/main_template/assets/js/vendor/plyr.js`
+24. `~/lib/main_template/assets/js/main.js`

@@ -43,10 +43,6 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Resources()
-    {
-        return View();
-    }
     
     [HttpGet]
     public IActionResult SetLanguage(string culture, string returnUrl)

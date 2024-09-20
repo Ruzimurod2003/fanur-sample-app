@@ -30,6 +30,18 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult SecondProject()
+    {
+        return View();
+    }
+    public IActionResult ThirdProject()
+    {
+        return View();
+    }
+    public IActionResult FourthProject()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

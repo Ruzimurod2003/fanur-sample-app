@@ -17,7 +17,6 @@
 17. `/lib/main_template/assets/images/brand/brand-02.png`
 18. `/lib/main_template/assets/images/brand/brand-03.png`
 19. `/lib/main_template/assets/images/brand/brand-04.png`
-20. `~/lib/main_template/assets/images/icons/en-us.png`
+20. `~/lib/main_template/assets/images/icons/en.png`
 21. `~/lib/main_template/assets/images/icons/ru.png`
 22. `~/logo.png`
-23. `~/lib/main_template/assets/images/logo/logo.png`

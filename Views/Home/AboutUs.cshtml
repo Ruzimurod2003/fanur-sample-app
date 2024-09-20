@@ -1,145 +1,36 @@
-<a class="close_side_menu" href="javascript:void(0);"></a>
+@{
+    var teamMembers = new List<TeamMemberVM>
+    {
+        new TeamMemberVM { NameKey = "person_1_name", PositionKey = "person_1_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/nurullahon_nazrullayev.jpg" },
+        new TeamMemberVM { NameKey = "person_2_name", PositionKey = "person_2_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/farrux_aminov.jpg" },
+        new TeamMemberVM { NameKey = "person_3_name", PositionKey = "person_3_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/mirjalol_xolmuradov.jpg" },
+        new TeamMemberVM { NameKey = "person_4_name", PositionKey = "person_4_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/kamola_xasanova.jpg" },
+        new TeamMemberVM { NameKey = "person_5_name", PositionKey = "person_5_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/farruh_mahmudovich.jpg" },
+        new TeamMemberVM { NameKey = "person_6_name", PositionKey = "person_6_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/ruzimurod_abdunazarov.jpg" },
+        new TeamMemberVM { NameKey = "person_7_name", PositionKey = "person_7_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/farrux_aminov.jpg" },
+        new TeamMemberVM { NameKey = "person_8_name", PositionKey = "person_8_position", ImagePath = "/lib/main_template/assets/images/fanur-about-us/mahmud_salohitdinov.jpg" }
+    };
+}
 
 <div class="rbt-team-area bg-color-extra2 rbt-section-gap">
     <div class="container">
         <div class="row g-5">
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/nurullahon_nazrullayev.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_1_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_1_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/farrux_aminov.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_2_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_2_position"]</h6>
+            @foreach (var member in teamMembers)
+            {
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="rbt-team team-style-default style-three small-layout rbt-hover">
+                        <div class="inner">
+                            <div class="thumbnail" style="text-align: center;">
+                                <img style="width:200px; align-items: center;" src="@member.ImagePath" alt="Corporate Template">
+                            </div>
+                            <div class="content">
+                                <h4 class="title">@Localizer[member.NameKey]</h4>
+                                <h6 class="subtitle theme-gradient">@Localizer[member.PositionKey]</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Single Team  -->
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/mirjalol_xolmuradov.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_3_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_3_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/kamola_xasanova.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_4_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_4_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/farruh_mahmudovich.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_5_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_5_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/ruzimurod_abdunazarov.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_6_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_6_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/farrux_aminov.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_7_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_7_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
-            <!-- Start Single Team  -->
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="rbt-team team-style-default style-three small-layout rbt-hover">
-                    <div class="inner">
-                        <div class="thumbnail" style="text-align: center;">
-                            <img style="width:200px; align-items: center;"
-                                src="~/lib/main_template/assets/images/fanur-about-us/mahmud_salohitdinov.jpg"
-                                alt="Corporate Template">
-                        </div>
-                        <div class="content">
-                            <h4 class="title">@Localizer["person_8_name"]</h4>
-                            <h6 class="subtitle theme-gradient">@Localizer["person_8_position"]</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Team  -->
+            }
         </div>
     </div>
 </div>

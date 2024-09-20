@@ -1,0 +1,39 @@
+@model FanurApp.Models.Resource
+
+@{
+    ViewData["Title"] = "Resource Details";
+}
+
+<h4>Resource Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Key)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Key)
+            </dd>
+            
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Value)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Value)
+            </dd>
+            
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Culture)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Culture.Id)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Back to List</a>
+</div>

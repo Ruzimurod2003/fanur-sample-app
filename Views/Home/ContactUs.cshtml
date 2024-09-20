@@ -1,54 +1,52 @@
 @model ContactUsVM;
 <a class="close_side_menu" href="javascript:void(0);"></a>
 
+@{
+    var contactInfos = new List<ContactInfoVM>
+    {
+        new ContactInfoVM { IconClass = "feather-headphones", TitleKey = "telephone_contact_numbers", Content = ConfigurationConstant.TelephoneNumber, LinkPrefix = "tel:" },
+        new ContactInfoVM { IconClass = "feather-mail", TitleKey = "our_email_address", Content = ConfigurationConstant.EmailAddres, LinkPrefix = "mailto:" },
+        new ContactInfoVM { IconClass = "feather-map-pin", TitleKey = "our_address", Content = ConfigurationConstant.LocationAddres }
+    };
+}
+
 <div class="rbt-conatct-area bg-gradient-11 rbt-section-gap">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                <div class="rbt-address">
-                    <div class="icon">
-                        <i class="feather-headphones"></i>
-                    </div>
-                    <div class="inner">
-                        <h4 class="title">@Localizer["telephone_contact_numbers"]</h4>
-                        <p><a href="tel:@ConfigurationConstant.TelephoneNumber">@ConfigurationConstant.TelephoneNumber</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="200" data-sal-duration="800">
-                <div class="rbt-address">
-                    <div class="icon">
-                        <i class="feather-mail"></i>
-                    </div>
-                    <div class="inner">
-                        <h4 class="title">
-                            @Localizer["our_email_address"]
-                        </h4>
-                        <p><a href="mailto:@ConfigurationConstant.EmailAddres">@ConfigurationConstant.EmailAddres</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
-                <div class="rbt-address">
-                    <div class="icon">
-                        <i class="feather-map-pin"></i>
-                    </div>
-                    <div class="inner">
-                        <h4 class="title">@Localizer["our_address"]</h4>
-                        <p>@ConfigurationConstant.LocationAddres</p>
+            @foreach (var info in contactInfos)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 sal-animate" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+                    <div class="rbt-address">
+                        <div class="icon">
+                            <i class="@info.IconClass"></i>
+                        </div>
+                        <div class="inner">
+                            <h4 class="title">@Localizer[info.TitleKey]</h4>
+                            <p>
+                                @if (!string.IsNullOrEmpty(info.LinkPrefix))
+                                {
+                                    <a href="@($"{info.LinkPrefix}{info.Content}")">@info.Content</a>
+                                }
+                                else
+                                {
+                                    @info.Content
+                                }
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </div>
+
 
 <div class="rbt-contact-address">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6">
                 <div class="thumbnail">
-                    @* <img class="w-75 radius-6" src="~/lib/main_template/assets/images/fanur/girl_1.png" alt="Contact Images"> *@
+                    <img class="w-75 radius-6" src="~/lib/main_template/assets/images/fanur/girl_1.png" alt="Contact Images">
                 </div>
             </div>
 

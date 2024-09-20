@@ -5,27 +5,22 @@ namespace FanurApp.Data;
 
 public class ApplicationContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
     public DbSet<Culture> Cultures { get; set; }
     public DbSet<Resource> Resources { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>().HasData(
-            new List<User>
+        modelBuilder.Entity<Culture>().HasData(
+            new List<Culture>
             {
-                new User
+                new Culture
                 {
                     Id = 1,
-                    Email = "ruzimurodabdunazarov2003@mail.ru",
-                    Name = "Ruzimurod Abdunazarov",
-                    Password = "parol2003"
+                    Name = "en"
                 },
-                new User
+                new Culture
                 {
-                    Id = 3,
-                    Email = "farrukhkarshibayev@gmail.com",
-                    Name = "Farrukh",
-                    Password = "20.08.2001"
+                    Id = 2,
+                    Name = "ru"
                 }
             }
         );

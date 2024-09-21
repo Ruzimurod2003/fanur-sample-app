@@ -43,6 +43,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult FifeProject()
+    {
+        return View();
+    }
     
     [HttpGet]
     public IActionResult SetLanguage(string culture, string returnUrl)

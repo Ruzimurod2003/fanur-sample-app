@@ -4,9 +4,9 @@
 @{
     var contactInfos = new List<ContactInfoVM>
     {
-        new ContactInfoVM { IconClass = "feather-headphones", TitleKey = "telephone_contact_numbers", Content = ConfigurationConstant.TelephoneNumber, LinkPrefix = "tel:" },
+        new ContactInfoVM { IconClass = "feather-headphones", TitleKey = "telephone_contact_numbers", ContentList = new List<string> { ConfigurationConstant.TelephoneNumberFirst, ConfigurationConstant.TelephoneNumberSecond }, LinkPrefix = "tel:" },
         new ContactInfoVM { IconClass = "feather-mail", TitleKey = "our_email_address", Content = ConfigurationConstant.EmailAddres, LinkPrefix = "mailto:" },
-        new ContactInfoVM { IconClass = "feather-map-pin", TitleKey = "our_address", Content = ConfigurationConstant.LocationAddres }
+        new ContactInfoVM { IconClass = "feather-map-pin", TitleKey = "our_address", Content = Localizer["full_address"].Value.ToString() }
     };
 }
 
@@ -23,7 +23,14 @@
                         <div class="inner">
                             <h4 class="title">@Localizer[info.TitleKey]</h4>
                             <p>
-                                @if (!string.IsNullOrEmpty(info.LinkPrefix))
+                                @if (info.ContentList != null && info.ContentList.Any())
+                                {
+                                    foreach (var content in info.ContentList)
+                                    {
+                                        <a href="@($"{info.LinkPrefix}{content}")">@content</a><br />
+                                    }
+                                }
+                                else if (!string.IsNullOrEmpty(info.LinkPrefix) && !string.IsNullOrEmpty(info.Content))
                                 {
                                     <a href="@($"{info.LinkPrefix}{info.Content}")">@info.Content</a>
                                 }
@@ -38,64 +45,4 @@
             }
         </div>
     </div>
-</div>
-
-
-<div class="rbt-contact-address">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6">
-                <div class="thumbnail">
-                    <img class="w-75 radius-6" src="/images/fanur/girl_1.png" alt="Contact Images">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="rbt-contact-form contact-form-style-1 max-width-auto">
-                    <h3 class="title">
-                        @Localizer["fill_out_the_following_to_contact_us"]
-                     </h3>
-                    <form asp-action="ContactUs" asp-controller="Main" method="post" class="rainbow-dynamic-form max-width-auto">
-                        <div class="form-group">
-                            <input asp-for="ContactName" required type="text">
-                            <label>@Localizer["enter_nam_for_contact"]</label>
-                            <span class="focus-border"></span>
-                            <span class="text-danger" asp-validation-for="ContactName"></span>
-                        </div>
-                        <div class="form-group">
-                            <input asp-for="ContactPhone" required type="tel">
-                            <label>@Localizer["enter_phone_for_contact"]</label>
-                            <span class="focus-border"></span>
-                            <span class="text-danger" asp-validation-for="ContactPhone"></span>
-                        </div>
-                        <div class="form-group">
-                            <input asp-for="Subject" required type="text">
-                            <label>@Localizer["enter_subject_for_contact"]</label>
-                            <span class="focus-border"></span>
-                            <span class="text-danger" asp-validation-for="Subject"></span>
-                        </div>
-                        <div class="form-group">
-                            <textarea asp-for="Message" required></textarea>
-                            <label>@Localizer["enter_message_for_contact"]</label>
-                            <span class="focus-border"></span>
-                            <span class="text-danger" asp-validation-for="Message"></span>
-                        </div>
-                        <div class="form-submit-group">
-                            <button class="rbt-btn btn-md btn-gradient hover-icon-reverse w-100" onclick="this.form.submit();">
-                                <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">@Localizer["sed_message_for_contact"]</span>
-                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                </span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="rbt-google-map bg-color-white rbt-section-gapTop">
-    <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.8238095919546!2d69.20176097593007!3d41.35618319793036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8d88bc70f0b9%3A0xb01a0158a3a86e7c!2sINNO%20Innovative%20Training%20and%20Production%20Technopark!5e0!3m2!1sru!2s!4v1703573883007!5m2!1sru!2s" height="600" style="border:0"></iframe>
 </div>

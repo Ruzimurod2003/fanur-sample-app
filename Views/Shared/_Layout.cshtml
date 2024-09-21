@@ -31,106 +31,6 @@
     <!-- Start Header Area -->
     <header class="rbt-header rbt-header-10">
         <div class="rbt-sticky-placeholder"></div>
-        <!-- Start Header Top  -->
-        <div
-            class="rbt-header-top rbt-header-top-1 header-space-betwween bg-not-transparent bg-color-darker top-expended-activation">
-            <div class="container-fluid">
-                <div class="top-expended-wrapper">
-                    <div class="top-expended-inner rbt-header-sec align-items-center ">
-                        <div class="rbt-header-sec-col rbt-header-left d-none d-xl-block">
-                            <div class="rbt-header-content">
-                                <!-- Start Header Information List  -->
-                                <div class="header-info">
-                                    <ul class="rbt-information-list">
-                                        <li>
-                                            <a href="@ConfigurationConstant.InstagramLink"><i
-                                                    class="fab fa-instagram"></i>Instagram</a>
-                                        </li>
-                                        <li>
-                                            <a href="@ConfigurationConstant.TelegramLink"><i
-                                                    class="fab fa-telegram"></i>Telegram</a>
-                                        </li>
-                                        <li>
-                                            <a href="tel:@ConfigurationConstant.TelephoneNumber"><i
-                                                    class="feather-phone"></i>@ConfigurationConstant.TelephoneNumber</a>
-                                        </li>
-                                        <li>
-                                            <a href="mailto:@ConfigurationConstant.EmailAddres"><i
-                                                    class="feather-mail"></i>@ConfigurationConstant.EmailAddres</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End Header Information List  -->
-                            </div>
-                        </div>
-                        <div class="rbt-header-sec-col rbt-header-right mt_md--10 mt_sm--10">
-                            <div class="rbt-header-content justify-content-start justify-content-lg-end">
-                                <div class="header-info d-none d-xl-block">
-                                    <ul class="social-share-transparent">
-                                        <li>
-                                            <a href="@ConfigurationConstant.InstagramLink"><i
-                                                    class="fab fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="@ConfigurationConstant.TelegramLink"><i
-                                                    class="fab fa-telegram"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="rbt-separator d-none d-xl-block"></div>
-
-                                <div class="header-info">
-                                    <ul class="rbt-dropdown-menu switcher-language">
-                                        <li class="has-child-menu">
-                                            <a>
-                                                <span class="menu-item">@Localizer["change_the_language"]</span>
-                                                <i class="right-icon feather-chevron-down"></i>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li>
-                                                    <a asp-action="SetLanguage" asp-controller="Home"
-                                                        asp-route-returnurl="@Context.Request.Path"
-                                                        asp-route-culture="en">
-                                                        <img class="left-image"
-                                                            src="/images/icons/en.png"
-                                                            alt="Language Images">
-                                                        <span class="menu-item">English</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a asp-action="SetLanguage" asp-controller="Home"
-                                                        asp-route-returnurl="@Context.Request.Path"
-                                                        asp-route-culture="ru">
-                                                        <img class="left-image"
-                                                            src="/images/icons/ru.png"
-                                                            alt="Language Images">
-                                                        <span class="menu-item">Русский</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="header-info">
-                                    <ul class="rbt-dropdown-menu currency-menu">
-                                        <li class="has-child-menu">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header-info">
-                        <div class="top-bar-expended d-block d-lg-none">
-                            <button class="topbar-expend-button rbt-round-btn"><i class="feather-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Header Top  -->
         <div class="rbt-header-wrapper header-space-betwween header-sticky">
             <div class="container-fluid">
                 <div class="mainbar-row rbt-navigation-center align-items-center">
@@ -147,7 +47,7 @@
 
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
-                            <ul class="mainmenu">
+                            <ul class="mainmenu flex justify-between items-center">
                                 <li>
                                     <a asp-action="Index" asp-controller="Home">@Localizer["home_page"]</a>
                                 </li>
@@ -191,21 +91,43 @@
 
                                 <li>
                                     <a asp-action="ContactUs" asp-controller="Home">@Localizer["contact_with_us"]</a>
-                                </li>
+                                </li>                                
                             </ul>
                         </nav>
                     </div>
 
-                    <div class="header-right">
+                    <ul class="rbt-dropdown-menu switcher-language flex space-x-4" style="display: flex;">
+                        <li class="has-child-menu">
+                            <a>
+                                <span class="menu-item">@Localizer["change_the_language"]</span>
+                                <i class="right-icon feather-chevron-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a asp-action="SetLanguage" asp-controller="Home"
+                                        asp-route-returnurl="@Context.Request.Path"
+                                        asp-route-culture="en">
+                                        <img class="left-image"
+                                            src="/images/icons/en.png"
+                                            alt="Language Images">
+                                        <span class="menu-item">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-action="SetLanguage" asp-controller="Home"
+                                        asp-route-returnurl="@Context.Request.Path"
+                                        asp-route-culture="ru">
+                                        <img class="left-image"
+                                            src="/images/icons/ru.png"
+                                            alt="Language Images">
+                                        <span class="menu-item">Русский</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                        <!-- Navbar Icons -->
-                        <ul class="quick-access">
-                            <li class="access-icon">
-                                <a class="search-trigger-active rbt-round-btn" href="#">
-                                    <i class="feather-search"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="header-right">
                         <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
@@ -219,26 +141,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Start Search Dropdown  -->
-            <div class="rbt-search-dropdown">
-                <div class="wrapper">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form action="#">
-                                <input type="text" placeholder="@Localizer["enter_what_you_are_looking_for"]">
-                                <div class="submit-btn">
-                                    <a class="rbt-btn btn-gradient btn-md" href="#">@Localizer["search"]</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="rbt-separator-mid">
-                        <hr class="rbt-separator m-0">
-                    </div>
-                </div>
-            </div>
-            <!-- End Search Dropdown  -->
         </div>
     </header>
     <!-- Mobile Menu Section -->

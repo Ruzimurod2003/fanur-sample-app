@@ -2,16 +2,20 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FanurApp.Models;
 using Microsoft.AspNetCore.Localization;
+using FanurApp.ViewModels;
+using Telegram.Bot;
 
 namespace FanurApp.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IConfiguration configuration;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IConfiguration _configuration)
     {
         _logger = logger;
+        configuration = _configuration;
     }
 
     public IActionResult Index()
@@ -26,6 +30,32 @@ public class HomeController : Controller
     public IActionResult ContactUs()
     {
         return View();
+    }
+    [HttpPost]
+    public async Task<IActionResult> ContactUsAsync(ContactUsVM viewModel)
+    {
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                string token = configuration.GetValue<string>("Telegram:Token");
+                string adminId = configuration.GetValue<string>("Telegram:AdminId");
+
+                var bot = new TelegramBotClient(token);
+                string message = $"🙋‍♂️ Sender: <b>{viewModel.ContactName}</b> \n" +
+                 $"📱 Contact number: <b>{viewModel.ContactPhone}</b> \n" +
+                 $"📧 Message subject: <b>{viewModel.Subject}</b> \n" +
+                 $"📝 Message content: <b>{viewModel.Message}</b>";
+
+                await bot.SendTextMessageAsync(adminId, message, parseMode: Telegram.Bot.Types.Enums.ParseMode.Html);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return RedirectToAction("Index", "Home", null);
+        }
+        return View(viewModel);
     }
     public IActionResult FirstProject()
     {
@@ -47,7 +77,7 @@ public class HomeController : Controller
     {
         return View();
     }
-    
+
     [HttpGet]
     public IActionResult SetLanguage(string culture, string returnUrl)
     {
